@@ -311,7 +311,7 @@
 <div class="bot-bar"></div>
 
 <script>
-  const FOLDER = "19th Logo Export 2026-04-02";
+  const FOLDER = "img";
 
   // 7 configurations
   const configs = [
@@ -330,16 +330,16 @@
   // For "Black" -> on white card  (one-color set)
   // For "White" -> on black card  (one-color set)
   const variants = {
-    ink:      { suffix: "Ink",      pngFolder: "PNG_Ink",      svgFolder: "SVG_Ink",      cardClass: "light",       label: "Ink" },
-    egg:      { suffix: "Eggshell", pngFolder: "PNG_Eggshell", svgFolder: "SVG_Eggshell", cardClass: "",            label: "Eggshell" },
-    black:    { suffix: "Black",    pngFolder: "PNG",          svgFolder: "SVG",          cardClass: "pure-white",  label: "Black" },
-    white:    { suffix: "White",    pngFolder: "PNG",          svgFolder: "SVG",          cardClass: "pure-black",  label: "White" },
+    ink:      { suffix: "Ink",      cardClass: "light",       label: "Ink" },
+    egg:      { suffix: "Eggshell", cardClass: "",            label: "Eggshell" },
+    black:    { suffix: "Black",    cardClass: "pure-white",  label: "Black" },
+    white:    { suffix: "White",    cardClass: "pure-black",  label: "White" },
   };
 
   function makeCard(cfg, v){
     const file = `${cfg.base} ${v.suffix}`;
-    const pngPath = encodeURI(`${FOLDER}/${v.pngFolder}/${file}.png`);
-    const svgPath = encodeURI(`${FOLDER}/${v.svgFolder}/${file}.svg`);
+    const pngPath = encodeURI(`${FOLDER}/png/${file}.png`);
+    const svgPath = encodeURI(`${FOLDER}/svg/${file}.svg`);
     const card = document.createElement("div");
     card.className = "logo-card" + (v.cardClass ? " " + v.cardClass : "");
     card.innerHTML = `
@@ -368,7 +368,7 @@
 
   // Header mark — Stack Frame Eggshell
   const hdr = document.getElementById("header-mark");
-  hdr.src = encodeURI(`${FOLDER}/SVG_Eggshell/19th and 7th Logo Stack Frame Eggshell.svg`);
+  hdr.src = encodeURI(`${FOLDER}/svg/19th and 7th Logo Stack Frame Eggshell.svg`);
 
   // ── Colors
   const foundations = [
